@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(#63120f, #5b1716);
+}
+
+.container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    transform-style: preserve-3d;
+
+    .box{
+        position: relative;
+        width: 300px;
+        height: 400px;
+        margin: 40px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        transform-style: preserve-3d;
+
+        .name{
+            position: absolute;
+            top: 0;
+            left: 0;
+            text-align: center;
+            width: 100%;
+            transform-style: preserve-3d;
+            transform: translate3d(0, 0, 80px);
+            color: #fff;
+            opacity: 0;
+            z-index: 10;
+            transition: 0.5s;
+        }
+
+        .buy{
+            position: absolute;
+            bottom: -10px;
+            left: 50%; 
+            transform-style: preserve-3d;
+            color: #fff;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            padding: 20px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: 0.5s;
+            transform: translate3d(-50%, 0, 80px);
+            width: 120px;
+            font-weight: 600;
+            z-index: 10;
+        }
+
+        .image{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform-style: preserve-3d;
+            transform: translate3d(-50%, -50%, 0); 
+            max-width: 250px;
+            transition: 0.5s;
+        }
+    }
+
+    .box:hover{
+        .name{ 
+            top: 40px;
+            opacity: 1;
+            transform: translate3d(0, 0, 120px);
+        }
+
+        .image{
+            transform: translate3d(-50%, -50%, 100px); 
+
+        }
+    }
+}
